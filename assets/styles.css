@@ -1851,10 +1851,10 @@ footer::before {
   }
 
   .banner__logo {
-    width: 150px;
-    height: 150px;
-    top: 10px;
-    left: 50%;
+    width: 180px;
+    height: auto;
+    top: 90px;
+    left: 30%;
     transform: translateX(-50%);
   }
 
@@ -1899,38 +1899,6 @@ footer::before {
     text-align: center;
   }
 
-  .counter-label {
-    text-align: center;
-  }
-
-  .btn-group {
-    margin-left: 0;
-    justify-content: center;
-    width: 100%;
-    gap: 12px;
-  }
-
-  .btn {
-    width: 45%;
-    margin-top: 0;
-    padding: 14px 12px;
-    font-size: 12px;
-  }
-
-  .banner_logo_2 {
-    margin: 0 auto;
-  }
-
-  .banner_logo_2 img {
-    width: 60%;
-    height: auto;
-  }
-
-  .desc-text {
-    font-size: 13px;
-    text-align: center;
-    padding: 0 16px;
-  }
 
   /* ── Instituciones ── */
   .description {
