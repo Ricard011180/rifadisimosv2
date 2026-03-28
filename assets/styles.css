@@ -1035,7 +1035,7 @@ footer::before {
 .logo-flo {
   position: fixed;
   top: 90px;
-  left: 0;
+  left: -15px;
   display: flex;
   align-items: center;
   z-index: 900;
