@@ -2738,8 +2738,8 @@ footer::before {
   }
 
   .logo-flo {
-    top: 120px;
-    left: -30px;
+    top: 100px;
+    left: -10px;
   }
 
   .logo-flo img {
@@ -2748,7 +2748,7 @@ footer::before {
   }
 
   .btn-rifar img {
-    width: 100px;
+    width: 90px;
     height: auto;
   }
 
