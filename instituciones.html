@@ -91,7 +91,7 @@
           <ul>
             <li>
               <a href="index.html" onclick="closeDrawer()"
-                ><<img src="assets/image/inicio.png" alt="Inicio" />
+                ><img src="assets/image/inicio.png" alt="Inicio" />
               </a>
             </li>
             <li>
@@ -172,7 +172,7 @@
       </div>
     </footer>
 
-     <!-- boton Redes Sociales -->
+    <!-- boton Redes Sociales -->
     <div class="fab-container" id="fab">
       <div class="fab-links" id="fabLinks">
         <a
@@ -280,8 +280,8 @@
         <button class="sfab-main_2" aria-label="Conocer más">⬆️</button>
       </a>
     </div>
-    
-  <!-- Boton logo -->
+
+    <!-- Boton logo -->
     <div class="logo-flo">
       <a
         href="index.html"
@@ -326,169 +326,6 @@
         <img src="assets/image/logo-participa.jpg" alt="Me voy a rifar" />
       </button>
     </div>
-
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const drawer = document.getElementById("drawer");
-      const overlay = document.getElementById("drawerOverlay");
-      const drawerClose = document.getElementById("drawerClose");
-
-      function openDrawer() {
-        drawer.classList.add("open");
-        overlay.classList.add("open");
-        hamburger.classList.add("open");
-        hamburger.setAttribute("aria-expanded", true);
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeDrawer() {
-        drawer.classList.remove("open");
-        overlay.classList.remove("open");
-        hamburger.classList.remove("open");
-        hamburger.setAttribute("aria-expanded", false);
-        document.body.style.overflow = "";
-      }
-
-      hamburger.addEventListener("click", () => {
-        drawer.classList.contains("open") ? closeDrawer() : openDrawer();
-      });
-
-      drawerClose.addEventListener("click", closeDrawer);
-      overlay.addEventListener("click", closeDrawer);
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeDrawer();
-      });
-
-      const socialToggle = document.getElementById("socialToggle");
-      const socialLinks = document.getElementById("socialLinks");
-
-      socialToggle.addEventListener("click", () => {
-        socialLinks.classList.toggle("open");
-        socialToggle.classList.toggle("active");
-      });
-
-      document.addEventListener("click", (e) => {
-        if (!e.target.closest(".social-fab-group")) {
-          socialLinks.classList.remove("open");
-          socialToggle.classList.remove("active");
-        }
-      });
-      const database = [
-        {
-          id: 1,
-          nombre: "Moto Clásica 750cc",
-          premio: "Honda Shadow",
-          contador: 160,
-          boletos: 840,
-          imagen:
-            "https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=400&q=80",
-        },
-        {
-          id: 2,
-          nombre: "Auto del Año",
-          premio: "Nissan Frontier",
-          contador: 2347,
-          boletos: 1653,
-          imagen:
-            "https://images.unsplash.com/photo-1542362567-b07e54358753?w=400&q=80",
-        },
-        {
-          id: 3,
-          nombre: "Rifa Navideña",
-          premio: 'Smart TV 75"',
-          contador: 512,
-          boletos: 488,
-          imagen:
-            "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&q=80",
-        },
-        {
-          id: 4,
-          nombre: "Premio Especial",
-          premio: "iPhone 16 Pro",
-          contador: 89,
-          boletos: 911,
-          imagen:
-            "https://tse3.mm.bing.net/th/id/OIP.vgTccssEVGDw8dmkQMJ_5QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-        },
-      ];
-
-      let currentIndex = 0;
-
-      function fetchFromDB(index) {
-        return new Promise((resolve) => {
-          setTimeout(
-            () => resolve(database[index % database.length]),
-            300 + Math.random() * 500,
-          );
-        });
-      }
-
-      function animateDigits(newVal) {
-        const val = String(newVal).padStart(4, "0").slice(-4);
-        const digits = document.querySelectorAll(".digit");
-        digits.forEach((d, i) => {
-          if (d.textContent !== val[i]) {
-            d.classList.add("flip");
-            setTimeout(() => {
-              d.textContent = val[i];
-              d.classList.remove("flip");
-            }, 150);
-          }
-        });
-      }
-
-      function slideImage(newSrc, newContador) {
-        const img = document.getElementById("articleImg");
-        const counter = document.querySelector(".counter-wrap");
-
-        const hasImage =
-          img.src && !img.src.endsWith("index.html") && !img.src.endsWith("/");
-
-        if (hasImage) {
-          img.classList.remove("slide-in");
-          img.classList.add("slide-out");
-          counter.classList.remove("slide-in");
-          counter.classList.add("slide-out");
-
-          setTimeout(() => {
-            img.src = newSrc;
-            animateDigits(newContador);
-
-            img.classList.remove("slide-out");
-            img.classList.add("slide-in");
-            counter.classList.remove("slide-out");
-            counter.classList.add("slide-in");
-          }, 280);
-        } else {
-          img.src = newSrc;
-          animateDigits(newContador);
-          img.classList.add("slide-in");
-          counter.classList.add("slide-in");
-        }
-      }
-
-      async function loadData(index) {
-        try {
-          const row = await fetchFromDB(index);
-          slideImage(row.imagen, row.contador);
-        } catch (e) {
-          console.error("Error al obtener datos", e);
-        }
-      }
-
-      loadData(currentIndex);
-
-      document.querySelector(".btn-secondary").addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % database.length;
-        loadData(currentIndex);
-      });
-
-      setInterval(() => {
-        loadData(currentIndex);
-      }, 10000);
-      const content = document.getElementById("infoContent");
-      content.innerHTML += content.innerHTML;
-    </script>
+    <script src="assets/scrip.js"></script>
   </body>
 </html>
