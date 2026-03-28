@@ -2625,6 +2625,19 @@ footer::before {
     z-index: 900;
   }
 
+  .logo-flo{
+     top: 120px;
+  left: -30px;
+  }
+.logo-flo img{
+width: 100px;
+height: auto;
+}
+  .btn-rifar img{
+    width: 40px;
+  height: auto;
+}
+
   .texto-lateral {
     display: none;
   }
