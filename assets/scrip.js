@@ -228,3 +228,4 @@ setInterval(() => {
 }, 10000);
 const content = document.getElementById("infoContent");
 content.innerHTML += content.innerHTML;
+

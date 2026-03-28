@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rifadisimos</title>
+    <meta
+      name="description"
+      content="Participa en rifas en línea en México con Rifadísimos. Gana premios increíbles y apoya causas sociales con cada boleto. ¡Regístrate y participa hoy!"
+    />
     <link rel="icon" type="image/png" href="assets/image/logo.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400&display=swap"
@@ -13,6 +17,11 @@
   </head>
 
   <body>
+    <!-- Loading Screen -->
+    <div id="loader">
+      <div class="spinner"></div>
+      <p>Cargando Rifadísimos...</p>
+    </div>
     <main>
       <header>
         <div class="header-inner">
@@ -326,6 +335,13 @@
         <img src="assets/image/logo-participa.jpg" alt="Me voy a rifar" />
       </button>
     </div>
+    <script>
+      window.addEventListener("load", () => {
+        const loader = document.getElementById("loader");
+        loader.classList.add("loaded");
+        setTimeout(() => loader.remove(), 500);
+      });
+    </script>
     <script src="assets/scrip.js"></script>
   </body>
 </html>

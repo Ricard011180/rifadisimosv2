@@ -17,6 +17,11 @@
   </head>
 
   <body>
+    <!-- Loading Screen -->
+    <div id="loader">
+      <div class="spinner"></div>
+      <p>Cargando Rifadísimos...</p>
+    </div>
     <main>
       <header>
         <div class="header-inner">
@@ -152,7 +157,10 @@
             </p>
           </div>
           <div class="about-img">
-            <img src="assets/image/somos.jpeg" alt="Empresa mexicana de rifas en línea Rifadísimos" />
+            <img
+              src="assets/image/somos.jpeg"
+              alt="Empresa mexicana de rifas en línea Rifadísimos"
+            />
           </div>
         </div>
         <!-- Mision -->
@@ -409,6 +417,13 @@
         <img src="assets/image/logo-participa.jpg" alt="Me voy a rifar" />
       </button>
     </div>
+    <script>
+      window.addEventListener("load", () => {
+        const loader = document.getElementById("loader");
+        loader.classList.add("loaded");
+        setTimeout(() => loader.remove(), 500);
+      });
+    </script>
     <script src="assets/scrip.js"></script>
   </body>
 </html>
