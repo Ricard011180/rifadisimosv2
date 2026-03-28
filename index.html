@@ -493,55 +493,7 @@
     </div>
 
     <script>
-      const hamburger = document.getElementById("hamburger");
-      const drawer = document.getElementById("drawer");
-      const overlay = document.getElementById("drawerOverlay");
-      const drawerClose = document.getElementById("drawerClose");
-
-      function openDrawer() {
-        drawer.classList.add("open");
-        overlay.classList.add("open");
-        hamburger.classList.add("open");
-        hamburger.setAttribute("aria-expanded", true);
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeDrawer() {
-        drawer.classList.remove("open");
-        overlay.classList.remove("open");
-        hamburger.classList.remove("open");
-        hamburger.setAttribute("aria-expanded", false);
-        document.body.style.overflow = "";
-      }
-
-      hamburger.addEventListener("click", () => {
-        drawer.classList.contains("open") ? closeDrawer() : openDrawer();
-      });
-
-      drawerClose.addEventListener("click", closeDrawer);
-      overlay.addEventListener("click", closeDrawer);
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeDrawer();
-      });
-
-      const socialToggle = document.getElementById("socialToggle");
-      const socialLinks = document.getElementById("socialLinks");
-
-      if (socialToggle && socialLinks) {
-        socialToggle.addEventListener("click", () => {
-          socialLinks.classList.toggle("open");
-          socialToggle.classList.toggle("active");
-        });
-
-        document.addEventListener("click", (e) => {
-          if (!e.target.closest(".social-fab-group")) {
-            socialLinks.classList.remove("open");
-            socialToggle.classList.remove("active");
-          }
-        });
-      }
-
+      
       const database = [
         {
           id: 1,
@@ -643,8 +595,6 @@
       setInterval(() => {
         loadData(currentIndex);
       }, 10000);
-      const content = document.getElementById("infoContent");
-      content.innerHTML += content.innerHTML;
     </script>
     <script src="assets/scrip.js"></script>
   </body>

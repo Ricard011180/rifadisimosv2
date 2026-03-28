@@ -1,5 +1,5 @@
+ 
 document.addEventListener("DOMContentLoaded", () => {
-
   const selectores = [
     ".about-text",
     ".banner__left",
