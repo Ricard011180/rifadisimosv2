@@ -1033,8 +1033,8 @@ footer::before {
 /* ══ Logo flotante ══ */
 .logo-flo {
   position: fixed;
-  top: 85px;
-  right: 0;
+  top: 90px;
+  left: 0;
   display: flex;
   align-items: center;
   z-index: 900;
@@ -1089,7 +1089,7 @@ footer::before {
   height: 8px;
   border-top: 2px solid currentColor;
   border-right: 2px solid currentColor;
-  transform: rotate(45deg);
+  transform: rotate(590deg);
   flex-shrink: 0;
 }
 
@@ -1104,7 +1104,7 @@ footer::before {
 /* ══ Botón "Me voy a rifar" flotante ══ */
 .btn-rifar-wrap {
   position: fixed;
-  bottom: 26rem;
+  bottom: 33rem;
   right: 50px;
   display: flex;
   align-items: center;
@@ -1350,7 +1350,7 @@ footer::before {
 /* ══ FAB nuevo (íconos animados) ══ */
 .fab-container {
   position: fixed;
-  margin-top: 60px;
+  margin-top: 150px;
   left: 20px;
   right: auto;
   display: flex;
@@ -1461,7 +1461,7 @@ footer::before {
   cursor: pointer;
   position: relative;
   opacity: 0;
-  transform: translateY(20px) scale(.85);
+  transform: translateX(20px) scale(.85);
   transition:
     opacity .3s ease,
     transform .35s cubic-bezier(.34,1.56,.64,1),
