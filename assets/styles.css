@@ -1752,7 +1752,7 @@ footer::before {
 }
 
 
-@media (max-width: 1554px) {
+@media (max-width: 1254px) {
 
   /* ── Banner ── */
   .banner {
@@ -2293,7 +2293,7 @@ footer::before {
   
 .btn-rifar-wrap {
   position: fixed;
-  bottom: 69rem;
+  bottom: 32rem;
   right: 30px;
   display: flex;
   align-items: center;
