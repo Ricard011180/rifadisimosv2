@@ -1,367 +1,494 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rifadisimos</title>
+    <link rel="icon" type="image/png" href="assets/image/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rifadisimos</title>
-  <link rel="icon" type="image/png" href="assets/image/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css">
-
-</head>
-
-<body>
-<main>
-
-    <header>
-      <div class="header-inner">
-        <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="main-nav" aria-label="Navegación principal">
+  <body>
+    <main>
+      <header>
+        <div class="header-inner">
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Menú"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <nav class="main-nav" aria-label="Navegación principal">
+            <ul>
+              <li>
+                <a href="index.html">
+                  <img src="assets/image/inicio.png" alt="Inicio" />
+                </a>
+              </li>
+              <li>
+                <a href="conocenos.html">
+                  <img src="assets/image/conocemos.png" alt="conocenos" />
+                </a>
+              </li>
+              <li>
+                <a href="#rifas">
+                  <img
+                    src="assets/image/rifas.png"
+                    alt="Rifas"
+                    style="height: 40px"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="instituciones.html">
+                  <img src="assets/image/nosrifamos.png" alt="instituciones" />
+                </a>
+              </li>
+              <li>
+                <a href="instituciones.html">
+                  <img
+                    src="assets/image/testimonios.png"
+                    alt="instituciones"
+                    style="height: 40px"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="drawer-overlay" id="drawerOverlay"></div>
+      <div
+        class="drawer"
+        id="drawer"
+        role="dialog"
+        aria-label="Menú de navegación"
+      >
+        <div class="drawer-header">
+          <div class="drawer-logo">
+            <div
+              class="logo-icon-lateral"
+              style="width: 100px; height: 100px; margin-left: 40px"
+            >
+              <img src="assets/image/logo.png" alt="" />
+            </div>
+          </div>
+          <button
+            class="drawer-close"
+            id="drawerClose"
+            aria-label="Cerrar menú"
+          >
+            ✕
+          </button>
+        </div>
+        <nav>
           <ul>
             <li>
-              <a href="index.html">
-                <img src="assets/image/inicio.png" alt="Inicio" />
+              <a href="index.html" onclick="closeDrawer()"
+                ><<img src="assets/image/inicio.png" alt="Inicio" />
               </a>
             </li>
             <li>
-              <a href="conocenos.html">
-                <img src="assets/image/conocemos.png" alt="conocenos" />
+              <a href="conocenos.html" onclick="closeDrawer()"
+                ><img src="assets/image/conocemos.png" alt="conocenos" />
               </a>
             </li>
             <li>
-              <a href="#rifas">
-                <img src="assets/image/rifas.png" alt="Rifas" style="height: 40px;" />
+              <a href="#rifas" onclick="closeDrawer()"
+                ><img src="assets/image/rifas.png" alt="Rifas" />
               </a>
             </li>
             <li>
-              <a href="instituciones.html">
-                <img src="assets/image/nosrifamos.png" alt="instituciones" />
+              <a href="#testimonios" onclick="closeDrawer()"
+                ><img src="assets/image/testimonios.png" alt="instituciones" />
               </a>
             </li>
             <li>
-              <a href="instituciones.html">
-                <img src="assets/image/testimonios.png" alt="instituciones" style="height: 40px;" />
+              <a href="instituciones.html" onclick="closeDrawer()"
+                ><img src="assets/image/nosrifamos.png" alt="instituciones" />
               </a>
             </li>
           </ul>
         </nav>
+        <div class="drawer-footer">© 2026 Rifadisimos</div>
       </div>
-    </header>
-    <div class="drawer-overlay" id="drawerOverlay"></div>
-    <div class="drawer" id="drawer" role="dialog" aria-label="Menú de navegación">
-      <div class="drawer-header">
-        <div class="drawer-logo">
-          <div class="logo-icon-lateral" style="width: 100px; height: 100px; margin-left: 40px;">
-            <img src="assets/image/logo.png" alt="">
+
+      <div class="info-bar">
+        <div class="info-bar-track">
+          <div class="info-bar-content" id="infoContent">
+            <img
+              src="assets/image/SEGOB.png"
+              style="height: 28px; mix-blend-mode: screen"
+            />
+            <span class="info-item">
+              Secretaría de Gobernación<strong></strong
+            ></span>
           </div>
         </div>
-        <button class="drawer-close" id="drawerClose" aria-label="Cerrar menú">✕</button>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html" onclick="closeDrawer()"></span><img src="assets/image/inicio.png" alt="Inicio" />
-            </a></li>
-          <li><a href="conocenos.html" onclick="closeDrawer()"></span> <img src="assets/image/conocemos.png"
-                alt="conocenos" />
-            </a></li>
-          <li><a href="#rifas" onclick="closeDrawer()"> <img src="assets/image/rifas.png" alt="Rifas" />
-            </a></li>
-          <li><a href="#testimonios" onclick="closeDrawer()"> <img src="assets/image/testimonios.png"
-                alt="instituciones" style="height: 48px;" />
-            </a></li>
-          <li><a href="instituciones.html" onclick="closeDrawer()"> <img src="assets/image/nosrifamos.png"
-                alt="instituciones" />
-            </a></li>
-        </ul>
-      </nav>
-      <div class="drawer-footer">© 2026 Rifadisimos</div>
-    </div>
+    </main>
+    <!--Footer-->
+    <footer id="contacto">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <a href="#inicio" class="logo">
+            <div class="logo-icon-footer">
+              <img src="assets/image/logo.png" alt="" class="logo-footer" />
+            </div>
+          </a>
 
-   <div class="info-bar">
-    <div class="info-bar-track">
-      <div class="info-bar-content" id="infoContent">
-        <img src="assets/image/SEGOB.png" style="height:28px; mix-blend-mode:screen;">
-        <span class="info-item"> Secretaría de Gobernación<strong></strong></span>
-      </div>
-    </div>
-  </div>
-</main>
-  <!--Footer-->
-  <footer id="contacto">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <a href="#inicio" class="logo">
-          <div class="logo-icon-footer">
-            <img src="assets/image/logo.png" alt="" class="logo-footer">
+          <div class="footer-links">
+            <h4>Navegación</h4>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="conocenos.html">conocenos</a></li>
+              <li><a href="#rifas">Rifas</a></li>
+              <li><a href="#testimonios">Testimonios</a></li>
+              <li><a href="#ayudanos">Ayudanos</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
           </div>
-        </a>
-
-        <div class="footer-links">
-          <h4>Navegación</h4>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="conocenos.html">conocenos</a></li>
-            <li><a href="#rifas">Rifas</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="#ayudanos">Ayudanos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
+          <div class="footer-links">
+            <h4>Contacto</h4>
+            <ul>
+              <li><a href="#">📧 email</a></li>
+              <li><a href="#">📞 +52 55 55 55 55 55 </a></li>
+              <li><a href="#">📍 Ciudad de México</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-links">
-          <h4>Contacto</h4>
-          <ul>
-            <li><a href="#">📧 email</a></li>
-            <li><a href="#">📞 +52 55 55 55 55 55 </a></li>
-            <li><a href="#">📍 Ciudad de México</a></li>
-          </ul>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026- Todos los derechos reservados
+            <strong>Rifadisimos</strong>
+          </p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p> &copy; 2026- Todos los derechos reservados <strong>Rifadisimos</strong></p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-   <!-- Botón redes sociales -->
+     <!-- boton Redes Sociales -->
     <div class="fab-container" id="fab">
-
-    <!-- Social links (shown when open) -->
-    <div class="fab-links" id="fabLinks">
-
-      <a class="fab-link" data-net="whatsapp" data-label="WhatsApp" href="#" target="_blank">
-        <!-- WhatsApp -->
-        <svg viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-      </a>
-
-      <a class="fab-link" data-net="tiktok" data-label="TikTok" href="#" target="_blank">
-        <!-- TikTok -->
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#69C9D0" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-        </svg>
-      </a>
-
-      <a class="fab-link" data-net="youtube" data-label="YouTube" href="#" target="_blank">
-        <!-- YouTube -->
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-      </a>
-
-      <a class="fab-link" data-net="facebook" data-label="Facebook" href="#" target="_blank">
-        <!-- Facebook -->
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      </a>
-
-      <!-- <a class="fab-link" data-net="twitter" data-label="X / Twitter" href="#" target="_blank">
-       X / Twitter
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#fff" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-      </a> -->
-
-      <!-- <a class="fab-link" data-net="instagram" data-label="Instagram" href="#" target="_blank">
-        Instagram gradient
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#f09433"/>
-              <stop offset="25%" stop-color="#e6683c"/>
-              <stop offset="50%" stop-color="#dc2743"/>
-              <stop offset="75%" stop-color="#cc2366"/>
-              <stop offset="100%" stop-color="#bc1888"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-        </svg>
-      </a> -->
-    </div>
-
-    <!-- Main button -->
-    <button class="fab-main" id="fabBtn" aria-label="Abrir redes sociales">
-      <div class="fab-icon-wrap" id="fabIconWrap">
-        <!-- Cycling icons (Instagram shown by default) -->
-        <svg class="visible" id="ico0" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        <svg class="hidden" id="ico1" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        <svg class="hidden" id="ico2" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        <svg class="hidden" id="ico3" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        <svg class="hidden" id="ico4" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-
-        <!-- Close X (hidden by default) -->
-        <svg class="fab-close hidden" id="icoClose" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <line x1="5" y1="5" x2="19" y2="19"/>
-          <line x1="19" y1="5" x2="5" y2="19"/>
-        </svg>
+      <div class="fab-links" id="fabLinks">
+        <a
+          class="fab-link"
+          data-net="whatsapp"
+          data-label="WhatsApp"
+          href="#"
+          target="_blank"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="#25D366"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+        </a>
+        <a
+          class="fab-link"
+          data-net="tiktok"
+          data-label="TikTok"
+          href="#"
+          target="_blank"
+        >
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="#69C9D0"
+              d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+            />
+          </svg>
+        </a>
+        <a
+          class="fab-link"
+          data-net="youtube"
+          data-label="YouTube"
+          href="#"
+          target="_blank"
+        >
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="#FF0000"
+              d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+            />
+          </svg>
+        </a>
+        <a
+          class="fab-link"
+          data-net="facebook"
+          data-label="Facebook"
+          href="#"
+          target="_blank"
+        >
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="#1877F2"
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+            />
+          </svg>
+        </a>
       </div>
-    </button>
-  </div>
-
- 
- <div class="logo-flo">
-  <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-    <span class="label-inicio">
-      Ir al inicio
-      <span class="arrow"></span>
-    </span>
-    <button class="sfab-log-flo" aria-label="Ir al inicio">
-      <img src="assets/image/logo.png" alt="Logo">
-    </button>
-  </a>
-  </div>
-
-<div class="btn-rifar-wrap">
-  <div class="texto-lateral">
-    <span class="texto-participa">Participa</span>
-    <span class="texto-sub">ahora mismo</span>
-    <div class="arrow-anim">
-      <div class="arr"></div>
-      <div class="arr"></div>
-      <div class="arr"></div>
+      <button class="fab-main" id="fabBtn" aria-label="Abrir redes sociales">
+        <div class="fab-icon-wrap" id="fabIconWrap">
+          <!-- Cycling icons (Instagram shown by default) -->
+          <svg class="visible" id="ico0" viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+            />
+          </svg>
+          <svg class="hidden" id="ico1" viewBox="0 0 24 24">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+            />
+          </svg>
+          <svg class="hidden" id="ico2" viewBox="0 0 24 24">
+            <path
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+            />
+          </svg>
+          <svg class="hidden" id="ico3" viewBox="0 0 24 24">
+            <path
+              d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+            />
+          </svg>
+          <svg class="hidden" id="ico4" viewBox="0 0 24 24">
+            <path
+              d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+            />
+          </svg>
+          <svg
+            class="fab-close hidden"
+            id="icoClose"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line x1="5" y1="5" x2="19" y2="19" />
+            <line x1="19" y1="5" x2="5" y2="19" />
+          </svg>
+        </div>
+      </button>
     </div>
-  </div>
-
-  <button class="btn-rifar" aria-label="Participar" onclick="location.href='#rifas'">
-    <div class="pulse-rings">
-      <div class="ring"></div>
-      <div class="ring"></div>
-      <div class="ring"></div>
+    <div class="social-fab-group_2" id="btnConocer">
+      <a href="#banner">
+        <button class="sfab-main_2" aria-label="Conocer más">⬆️</button>
+      </a>
     </div>
-    <img src="assets/image/logo-participa.jpg" alt="Me voy a rifar">
-  </button>
-</div>
+    
+  <!-- Boton logo -->
+    <div class="logo-flo">
+      <a
+        href="index.html"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          text-decoration: none;
+        "
+      >
+        <button class="sfab-log-flo" aria-label="Ir al inicio">
+          <img src="assets/image/logo.png" alt="Logo" />
+        </button>
+        <span class="label-inicio">
+          <span class="arrow"></span>
+          Ir al inicio
+        </span>
+      </a>
+    </div>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const drawer = document.getElementById('drawer');
-    const overlay = document.getElementById('drawerOverlay');
-    const drawerClose = document.getElementById('drawerClose');
+    <div class="btn-rifar-wrap">
+      <div class="texto-lateral">
+        <span class="texto-participa">Participa</span>
+        <span class="texto-sub">ahora mismo</span>
+        <div class="arrow-anim">
+          <div class="arr"></div>
+          <div class="arr"></div>
+          <div class="arr"></div>
+        </div>
+      </div>
 
-    function openDrawer() {
-      drawer.classList.add('open');
-      overlay.classList.add('open');
-      hamburger.classList.add('open');
-      hamburger.setAttribute('aria-expanded', true);
-      document.body.style.overflow = 'hidden';
-    }
+      <button
+        class="btn-rifar"
+        aria-label="Participar"
+        onclick="location.href = '#rifas'"
+      >
+        <div class="pulse-rings">
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+        </div>
+        <img src="assets/image/logo-participa.jpg" alt="Me voy a rifar" />
+      </button>
+    </div>
 
-    function closeDrawer() {
-      drawer.classList.remove('open');
-      overlay.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', false);
-      document.body.style.overflow = '';
-    }
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const drawer = document.getElementById("drawer");
+      const overlay = document.getElementById("drawerOverlay");
+      const drawerClose = document.getElementById("drawerClose");
 
-    hamburger.addEventListener('click', () => {
-      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
-    });
-
-    drawerClose.addEventListener('click', closeDrawer);
-    overlay.addEventListener('click', closeDrawer);
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeDrawer();
-    });
-
-
-    const socialToggle = document.getElementById('socialToggle');
-    const socialLinks = document.getElementById('socialLinks');
-
-    socialToggle.addEventListener('click', () => {
-      socialLinks.classList.toggle('open');
-      socialToggle.classList.toggle('active');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.social-fab-group')) {
-        socialLinks.classList.remove('open');
-        socialToggle.classList.remove('active');
+      function openDrawer() {
+        drawer.classList.add("open");
+        overlay.classList.add("open");
+        hamburger.classList.add("open");
+        hamburger.setAttribute("aria-expanded", true);
+        document.body.style.overflow = "hidden";
       }
-    });
-    const database = [
-      { id: 1, nombre: "Moto Clásica 750cc", premio: "Honda Shadow", contador: 160, boletos: 840, imagen: "https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=400&q=80" },
-      { id: 2, nombre: "Auto del Año", premio: "Nissan Frontier", contador: 2347, boletos: 1653, imagen: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=400&q=80" },
-      { id: 3, nombre: "Rifa Navideña", premio: "Smart TV 75\"", contador: 512, boletos: 488, imagen: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&q=80" },
-      { id: 4, nombre: "Premio Especial", premio: "iPhone 16 Pro", contador: 89, boletos: 911, imagen: "https://tse3.mm.bing.net/th/id/OIP.vgTccssEVGDw8dmkQMJ_5QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" },
-    ];
 
-    let currentIndex = 0;
+      function closeDrawer() {
+        drawer.classList.remove("open");
+        overlay.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", false);
+        document.body.style.overflow = "";
+      }
 
-    function fetchFromDB(index) {
-      return new Promise(resolve => {
-        setTimeout(() => resolve(database[index % database.length]), 300 + Math.random() * 500);
+      hamburger.addEventListener("click", () => {
+        drawer.classList.contains("open") ? closeDrawer() : openDrawer();
       });
-    }
 
-    function animateDigits(newVal) {
-      const val = String(newVal).padStart(4, '0').slice(-4);
-      const digits = document.querySelectorAll('.digit');
-      digits.forEach((d, i) => {
-        if (d.textContent !== val[i]) {
-          d.classList.add('flip');
-          setTimeout(() => { d.textContent = val[i]; d.classList.remove('flip'); }, 150);
+      drawerClose.addEventListener("click", closeDrawer);
+      overlay.addEventListener("click", closeDrawer);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeDrawer();
+      });
+
+      const socialToggle = document.getElementById("socialToggle");
+      const socialLinks = document.getElementById("socialLinks");
+
+      socialToggle.addEventListener("click", () => {
+        socialLinks.classList.toggle("open");
+        socialToggle.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".social-fab-group")) {
+          socialLinks.classList.remove("open");
+          socialToggle.classList.remove("active");
         }
       });
-    }
+      const database = [
+        {
+          id: 1,
+          nombre: "Moto Clásica 750cc",
+          premio: "Honda Shadow",
+          contador: 160,
+          boletos: 840,
+          imagen:
+            "https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=400&q=80",
+        },
+        {
+          id: 2,
+          nombre: "Auto del Año",
+          premio: "Nissan Frontier",
+          contador: 2347,
+          boletos: 1653,
+          imagen:
+            "https://images.unsplash.com/photo-1542362567-b07e54358753?w=400&q=80",
+        },
+        {
+          id: 3,
+          nombre: "Rifa Navideña",
+          premio: 'Smart TV 75"',
+          contador: 512,
+          boletos: 488,
+          imagen:
+            "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&q=80",
+        },
+        {
+          id: 4,
+          nombre: "Premio Especial",
+          premio: "iPhone 16 Pro",
+          contador: 89,
+          boletos: 911,
+          imagen:
+            "https://tse3.mm.bing.net/th/id/OIP.vgTccssEVGDw8dmkQMJ_5QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+        },
+      ];
 
-    function slideImage(newSrc, newContador) {
-      const img = document.getElementById('articleImg');
-      const counter = document.querySelector('.counter-wrap');
+      let currentIndex = 0;
 
-      const hasImage = img.src && !img.src.endsWith('index.html') && !img.src.endsWith('/');
+      function fetchFromDB(index) {
+        return new Promise((resolve) => {
+          setTimeout(
+            () => resolve(database[index % database.length]),
+            300 + Math.random() * 500,
+          );
+        });
+      }
 
-      if (hasImage) {
-        img.classList.remove('slide-in');
-        img.classList.add('slide-out');
-        counter.classList.remove('slide-in');
-        counter.classList.add('slide-out');
+      function animateDigits(newVal) {
+        const val = String(newVal).padStart(4, "0").slice(-4);
+        const digits = document.querySelectorAll(".digit");
+        digits.forEach((d, i) => {
+          if (d.textContent !== val[i]) {
+            d.classList.add("flip");
+            setTimeout(() => {
+              d.textContent = val[i];
+              d.classList.remove("flip");
+            }, 150);
+          }
+        });
+      }
 
-        setTimeout(() => {
+      function slideImage(newSrc, newContador) {
+        const img = document.getElementById("articleImg");
+        const counter = document.querySelector(".counter-wrap");
+
+        const hasImage =
+          img.src && !img.src.endsWith("index.html") && !img.src.endsWith("/");
+
+        if (hasImage) {
+          img.classList.remove("slide-in");
+          img.classList.add("slide-out");
+          counter.classList.remove("slide-in");
+          counter.classList.add("slide-out");
+
+          setTimeout(() => {
+            img.src = newSrc;
+            animateDigits(newContador);
+
+            img.classList.remove("slide-out");
+            img.classList.add("slide-in");
+            counter.classList.remove("slide-out");
+            counter.classList.add("slide-in");
+          }, 280);
+        } else {
           img.src = newSrc;
           animateDigits(newContador);
-
-          img.classList.remove('slide-out');
-          img.classList.add('slide-in');
-          counter.classList.remove('slide-out');
-          counter.classList.add('slide-in');
-        }, 280);
-      } else {
-        img.src = newSrc;
-        animateDigits(newContador);
-        img.classList.add('slide-in');
-        counter.classList.add('slide-in');
+          img.classList.add("slide-in");
+          counter.classList.add("slide-in");
+        }
       }
-    }
 
-    async function loadData(index) {
-      try {
-        const row = await fetchFromDB(index);
-        slideImage(row.imagen, row.contador);
-      } catch (e) {
-        console.error('Error al obtener datos', e);
+      async function loadData(index) {
+        try {
+          const row = await fetchFromDB(index);
+          slideImage(row.imagen, row.contador);
+        } catch (e) {
+          console.error("Error al obtener datos", e);
+        }
       }
-    }
 
-    loadData(currentIndex);
-
-    document.querySelector('.btn-secondary').addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % database.length;
       loadData(currentIndex);
-    });
 
-    setInterval(() => {
-      loadData(currentIndex);
-    }, 10000);
-    const content = document.getElementById('infoContent');
-    content.innerHTML += content.innerHTML;
-  </script>
-</body>
+      document.querySelector(".btn-secondary").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % database.length;
+        loadData(currentIndex);
+      });
 
+      setInterval(() => {
+        loadData(currentIndex);
+      }, 10000);
+      const content = document.getElementById("infoContent");
+      content.innerHTML += content.innerHTML;
+    </script>
+  </body>
 </html>
