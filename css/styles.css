@@ -17,7 +17,7 @@
   --cyan: #00d4e8;
   --green: #25d366;
   --blue: #1877f2;
-  --img: url("/assets/image/fondo.jpg");
+  --img: url("../assets/image/fondo.jpg");
 }
 
 html {
