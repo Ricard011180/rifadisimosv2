@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirigir cualquier acceso con .html a sin extensión
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Mostrar los archivos .html sin extensión
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
