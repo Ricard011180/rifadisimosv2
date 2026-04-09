@@ -503,6 +503,10 @@
     .texto-lateral {
         display: none;
     }
+
+    .fab-container{
+        display: none;
+    }
 }
 
 @media (max-width: 360px) {
@@ -549,5 +553,9 @@
         align-items: center;
         gap: 0;
         z-index: 900;
+    }
+
+    .fab-container{
+        display: none;
     }
 }

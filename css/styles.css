@@ -729,14 +729,10 @@ p {
 
 .item-image-wrap img {
   width: 500px;
-  height: 400px;
+  height: 380px;
   margin-left: 110px;
   border-radius: 10px;
   transition: transform 0.5s ease;
-}
-
-.item-image-wrap:hover img {
-  transform: scale(1.03);
 }
 
 .counter-wrap {
@@ -766,12 +762,11 @@ p {
 }
 
 .counter-wrap-contador {
-  margin-left: 140px;
+  margin-left: 120px;
 }
 
 .counter-label {
-  font-size: 24px;
-  letter-spacing: 3px;
+  font-size: 18px;
   text-transform: uppercase;
   text-align: left;
   color: rgb(255, 255, 255);
